@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="./img/chuD.jpg" alt="Your Logo">
+            <img src="./img/chuD.jpg" alt="Your Logo">  
         </div>
         <nav>
             <ul>
@@ -75,7 +75,7 @@
 
     <section id="contact" class="tab-content" style="display: none;">
         <h2>Contact Me</h2>
-        <p>Get in touch with me via email at: yourname@example.com</p>
+        <p>Get in touch with me via email at: nguyenvando1932005@gmail.com</p>
     </section>
 
     <footer>
@@ -84,17 +84,21 @@
 
     <script>
         function openTab(event, tabName) {
-            var i, tabcontent, tablinks;
-            
-            // Ẩn tất cả nội dung tab
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+    var i, tabcontent, tablinks;
 
-            // Hiện tab được chọn
-            document.getElementById(tabName).style.display = "block";
-        }
+    // Ẩn tất cả nội dung tab
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+        tabcontent[i].style.display = "none"; // Vẫn cần để ẩn nội dung
+    }
+
+    // Hiển thị tab được chọn với hiệu ứng nẩy lên
+    var selectedTab = document.getElementById(tabName);
+    selectedTab.style.display = "block";
+    setTimeout(() => selectedTab.classList.add("active"), 10); // Thêm độ trễ nhỏ để chuyển đổi hiệu ứng
+}
+
     </script>
 </body>
 </html>
